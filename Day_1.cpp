@@ -8,7 +8,7 @@ int x;
 int OldDepth=0;
 int increased=-1;
 ifstream Depths;
-Depths.open("C:\\Users\\Finn McDonnell\\Documents\\VisualStudioCode\\AdventofCode\\Day_1_Input_Values.txt");
+Depths.open("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Day_1_Input_Values.txt");
 
     if (!Depths) {
         cout << "Unable to open file";
