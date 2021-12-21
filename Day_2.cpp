@@ -1,43 +1,33 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
+#include <vector>
 using namespace std;
 
+
+vector<int> StringToint (string file){
+    string temp;
+    ifstream inputFile (file);
+    vector<int> depthVector = {};
+    while (inputFile >> temp){
+        depthVector.push_back(stoi(temp));
+    }
+    inputFile.close();
+    return depthVector;
+}
+
 int main() {
-int x;
-int increased=-1;
-int SumOne = 0;
-int SumTwo = 0;
 
-ifstream Depths;
-int line_number = 0;
-Depths.open("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Test_Input_File.txt");
+int increased=0;
+vector<int> depthData = StringToint("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Day_1_Input_Values.txt");
 
-    if (!Depths) {
-        cout << "Unable to open file";
-        exit(1); // terminate with error
+for (int i=3; i<depthData.size(); i++){
+    if ((depthData[i-3]+depthData[i-2]+depthData[i-1])<(depthData[i-2]+depthData[i-1]+depthData[i])){
+        increased++;
     }
-    while (Depths >> x) {
+}
+cout << "Sum = " << increased << endl; 
+return 0;
 
-        if (line_number == 3){
-            if (SumTwo>SumOne){
-                increased++;
-                line_number = 0;
-                SumOne = SumTwo;
-                SumTwo = 0;
-            } else {
-                line_number = 0;
-                SumOne = SumTwo;
-                SumTwo = 0;
-            }
-        } else {
-            SumTwo += x;
-            line_number++;
-            cout << SumTwo << endl;
-        }
-  
-    }
-    Depths.close();
-    cout << "Sum = " << increased << endl; 
-    return 0;
 }
