@@ -20,9 +20,33 @@ while (getline(TestFileInput, Line)){
     }
 
     for(int i=0; i<LineLength; i++){
-        if (Line[i] & 1)
+        if (Line[i]==1){
+            DiagBits[i]++;
+        }
     }
     LineCounter++;
 }
+
+//std::vector<string> gamma(DiagBits.size(), "0");
+//std::vector<string> epsilon(DiagBits.size(), "0");
+
+string gamma;
+string epsilon;
+
+for (int i=0; i<DiagBits.size(); i++){
+    if (DiagBits[i]>((LineCounter+1)/2)){
+        gamma.push_back(1);
+        epsilon.push_back(0);
+    } else {
+        gamma.push_back(0);
+        epsilon.push_back(1);
+    }
+}
+
+cout << gamma << endl;
+cout << epsilon << endl;
+
+//int FinalValue = (stoi(gamma, 0, 2))*(stoi(epsilon, 0, 2));
+
 return 0;
 }
