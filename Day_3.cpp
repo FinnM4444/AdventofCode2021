@@ -6,12 +6,15 @@ using namespace std;
 
 int main() {
 
+cout << "entering main" << endl;
+
 int LineCounter = 0;
-ifstream TestFileInput ("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Day_3_Input_Values.txt");
+ifstream TestFileInput ("C:\\Users\\Finn McDonnell\\Documents\\VisualStudioCode\\AdventofCode2021");
 string Line;
 int Length = 0;
 vector<int> DiagBits = {};
 
+cout << "prewhile working" << endl;
 
 while (getline(TestFileInput, Line)){
     int LineLength = Line.length();
@@ -22,9 +25,11 @@ while (getline(TestFileInput, Line)){
     for(int i=0; i<LineLength; i++){
         if (Line[i]==1){
             DiagBits[i]++;
+            cout << "DiagBitsIncreasing" << endl;
         }
     }
     LineCounter++;
+    cout << "while working" << endl;
 }
 
 //std::vector<string> gamma(DiagBits.size(), "0");
@@ -35,16 +40,17 @@ string epsilon;
 
 for (int i=0; i<DiagBits.size(); i++){
     if (DiagBits[i]>((LineCounter+1)/2)){
-        gamma.push_back(1);
-        epsilon.push_back(0);
+        gamma.append("1");
+        epsilon.append("0");
     } else {
-        gamma.push_back(0);
-        epsilon.push_back(1);
+        gamma.append("0");
+        epsilon.append("1");
     }
 }
 
 cout << gamma << endl;
 cout << epsilon << endl;
+cout << DiagBits.size() << endl;
 
 //int FinalValue = (stoi(gamma, 0, 2))*(stoi(epsilon, 0, 2));
 
