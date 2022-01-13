@@ -9,7 +9,11 @@ int main() {
 cout << "entering main" << endl;
 
 int LineCounter = 0;
-ifstream TestFileInput ("C:\\Users\\Finn McDonnell\\Documents\\VisualStudioCode\\AdventofCode2021");
+ifstream TestFileInput ("C:\\Users\\Finn McDonnell\\Documents\\VisualStudioCode\\AdventofCode2021\\Day_3_Input_Values");
+    if (!TestFileInput) {
+        cout << "Unable to open file";
+        exit(1); // terminate with error
+    }
 string Line;
 int Length = 0;
 vector<int> DiagBits = {};
