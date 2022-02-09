@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-int main() {
+void PartOne() {
 
 int LineCounter = 0;
 ifstream TestFileInput ("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Day_3_Input_Values.txt");
@@ -43,6 +43,34 @@ for (int i=0; i<DiagBits.size(); i++){
 
 int FinalValue = (stoi(gamma, 0, 2))*(stoi(epsilon, 0, 2));
 std::cout << FinalValue << endl;
+}
+
+void PartTwo(){
+
+
+ifstream TestFileInput ("C:\\Users\\finnm\\OneDrive\\Documents\\Visual Studio\\AdventofCode2021\\Day_3_Input_Values.txt");
+    if (!TestFileInput) {
+        exit(1); // terminate with error
+    }
+string Line;
+
+while (getline(TestFileInput, Line)){
+    
+
+
+}
+
+
+
+}
+
+
+
+int main() {
+
+PartOne();
+PartTwo();
+
 
 return 0;
 }
